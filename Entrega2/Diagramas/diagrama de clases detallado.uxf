@@ -1,0 +1,112 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>12</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>720</x><y>187</y><w>252</w><h>168</h></coordinates><panel_attributes>Usuario
+&lt;&lt;controller&gt;&gt;
+--
+# username: String
+# password: String
+--
++ iniciarSesion(): void
++ verEstadisticas(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>216</x><y>343</y><w>348</w><h>132</h></coordinates><panel_attributes>Participante
+&lt;&lt;controller&gt;&gt;
+--
+--
++ crearNuevoEquipoFantasia(): void
++ configurarAlineacionProximaFecha(): void
++ comprarJugador(): void
++ venderJugador(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1164</x><y>163</y><w>252</w><h>108</h></coordinates><panel_attributes>Administrador
+&lt;&lt;controller&gt;&gt;
+--
+--
++ configurarTemporada(): void
++ registrarPartido(): void	</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>336</x><y>199</y><w>408</w><h>168</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>320;10;10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>960</x><y>199</y><w>228</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;170;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1164</x><y>391</y><w>252</w><h>84</h></coordinates><panel_attributes>Temporada
+&lt;&lt;Information Holder&gt;&gt;
+--
+- presupuestoBase: double</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1596</x><y>391</y><w>252</w><h>84</h></coordinates><panel_attributes>Fecha
+&lt;&lt;Information Holder&gt;&gt;
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1584</x><y>559</y><w>252</w><h>168</h></coordinates><panel_attributes>Partido
+&lt;&lt;Information Holder&gt;&gt;
+--
+- dia: String
+- hora: String
+- resultado: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1404</x><y>403</y><w>216</w><h>48</h></coordinates><panel_attributes>lt=&lt;-
+m2=	fechas    *</panel_attributes><additional_attributes>160;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1704</x><y>463</y><w>120</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+m2=	partidos   *</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1152</x><y>559</y><w>252</w><h>96</h></coordinates><panel_attributes>EquipoReal
+&lt;&lt;Information Holder&gt;&gt;
+--
+- nombreEqReal: String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1152</x><y>727</y><w>252</w><h>120</h></coordinates><panel_attributes>Jugador
+&lt;&lt;Information Holder&gt;&gt;
+--
+# nombreJug: String
+- posicion: String
+- precio: double</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1272</x><y>463</y><w>108</w><h>120</h></coordinates><panel_attributes>lt=&lt;-
+m2=	equipos   *</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1272</x><y>643</y><w>120</w><h>108</h></coordinates><panel_attributes>lt=&lt;-
+m2=	jugadores   *</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>564</x><y>931</y><w>252</w><h>84</h></coordinates><panel_attributes>Alineacion
+&lt;&lt;Information Holder&gt;&gt;
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>216</x><y>571</y><w>252</w><h>132</h></coordinates><panel_attributes>EquipoFantasia
+&lt;&lt;Information Holder&gt;&gt;
+--
+- nombreEqFan: String
+- puntos: int
+- presupuesto: double
+--
+actualizarPuntaje(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>691</y><w>756</w><h>360</h></coordinates><panel_attributes>lt=&lt;-
+m2=	jugadores   15</panel_attributes><additional_attributes>610;280;10;280;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>744</x><y>679</y><w>276</w><h>132</h></coordinates><panel_attributes>Posiciones de los 15 jugadores 
+deben ser:
+2 arqueros
+5 defensas 
+5 mediocampistas
+3 delanteros
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1272</x><y>259</y><w>144</w><h>156</h></coordinates><panel_attributes>lt=&lt;-
+m2=	temporadas   *</panel_attributes><additional_attributes>10;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>552</x><y>403</y><w>636</w><h>48</h></coordinates><panel_attributes>lt=&lt;-
+m2=	participantes   *</panel_attributes><additional_attributes>10;10;510;10</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>463</y><w>216</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
+m2=	equipoFantasiaActual  0..1</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>252</x><y>463</y><w>192</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
+m2=	equiposFantasiaHist   *</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>607</y><w>264</w><h>348</h></coordinates><panel_attributes>lt=&lt;-
+m2=	alineacionActual   0..1</panel_attributes><additional_attributes>200;270;200;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>456</x><y>643</y><w>240</w><h>312</h></coordinates><panel_attributes>lt=&lt;-
+m2=	alineacionesHistorico   *</panel_attributes><additional_attributes>180;240;180;10;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>0</x><y>595</y><w>204</w><h>72</h></coordinates><panel_attributes>Inicializa puntos en 0, sin importar momento de temporada
+style=wordwrap
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>804</x><y>943</y><w>372</w><h>48</h></coordinates><panel_attributes>lt=&lt;-
+m2=	titulares   11</panel_attributes><additional_attributes>290;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>804</x><y>967</y><w>372</w><h>48</h></coordinates><panel_attributes>lt=&lt;-
+m2=	suplentes   4</panel_attributes><additional_attributes>290;10;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>744</x><y>823</y><w>204</w><h>60</h></coordinates><panel_attributes>capitan debe pertenecer a los titulares
+style=wordwrap
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1392</x><y>571</y><w>216</w><h>48</h></coordinates><panel_attributes>lt=&lt;-
+m2=	equipoLocal   1</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1392</x><y>595</y><w>216</w><h>48</h></coordinates><panel_attributes>lt=&lt;-
+m2=	equipoVisitante   1</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>804</x><y>991</y><w>372</w><h>48</h></coordinates><panel_attributes>lt=&lt;-
+m2=	capitan   1</panel_attributes><additional_attributes>290;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1584</x><y>799</y><w>252</w><h>300</h></coordinates><panel_attributes>DesempenioJugador
+--
+- minJugados: int
+- minIngreso: int
+- minSalida: int
+- goles: int
+- penaltisAnotados: int
+- penaltisErrados: int
+- autogoles: int
+- asistencias: int
+- golesRecibidos: int
+- penaltisDetenidos: int
+- tarjetasAmarillas: int
+- tarjetasRojas: int
+- puntos: int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1392</x><y>811</y><w>216</w><h>36</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;160;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1620</x><y>715</y><w>204</w><h>108</h></coordinates><panel_attributes>lt=&lt;-
+m2=	desempenioJugadores   *</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>192</x><y>739</y><w>204</w><h>204</h></coordinates><panel_attributes>Para actualizar puntos del equipo solo se usará a los titulares, a menos que un titular no haya tenido ni un minuto donde se usará el suplente. 
+Solo se reemplaza un jugador por posicion
+style=wordwrap
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1056</x><y>259</y><w>168</w><h>156</h></coordinates><panel_attributes>lt=&lt;-
+m2=	administrador   1
+m2pos=-115,7</panel_attributes><additional_attributes>120;10;120;110</additional_attributes></element><element><id>Relation</id><coordinates><x>1824</x><y>403</y><w>312</w><h>444</h></coordinates><panel_attributes>lt=&lt;-
+m2=	desempenioJugadoresFecha  *
+m2pos=30,7
+</panel_attributes><additional_attributes>10;350;60;350;60;10;20;10</additional_attributes></element><element><id>UMLNote</id><coordinates><x>1440</x><y>691</y><w>120</w><h>120</h></coordinates><panel_attributes>todas las fechas y horas son en la misma zona horaria
+style=wordwrap
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1152</x><y>907</y><w>252</w><h>120</h></coordinates><panel_attributes>JugadorFantasia
+&lt;&lt;Information Holder&gt;&gt;
+--
+- puntos: int</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1260</x><y>835</y><w>36</w><h>96</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>1392</x><y>619</y><w>216</w><h>48</h></coordinates><panel_attributes>lt=&lt;-
+m2=	partidos   *</panel_attributes><additional_attributes>160;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>463</y><w>132</w><h>132</h></coordinates><panel_attributes>lt=&lt;-
+m2=	propietario 1
+m2pos=-85,7</panel_attributes><additional_attributes>90;10;90;90</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1644</x><y>115</y><w>252</w><h>108</h></coordinates><panel_attributes>Juego
+&lt;&lt;interfacer&gt;&gt;
+--
+--</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>1380</x><y>187</y><w>288</w><h>228</h></coordinates><panel_attributes>lt=&lt;-
+m2=	temporadas *
+m2pos=-25,7
+</panel_attributes><additional_attributes>10;170;220;10</additional_attributes></element></diagram>
