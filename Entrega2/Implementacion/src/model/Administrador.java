@@ -1,22 +1,21 @@
 package model;
 
-public class Usuario {
+public class Administrador extends Usuario {
 
     // -----------------------
     // Atributos
     // -----------------------
 
-    protected String username;
-    protected String password;
+    // username: String
+    // password: String
 
     // -----------------------
     // Constructor
     // -----------------------
 
-    public Usuario(String username, String password) {
+    public Administrador(String username, String password) {
 
-        this.username = username;
-        this.password = password;
+        super(username, password);
 
     }
 
@@ -27,19 +26,11 @@ public class Usuario {
     /*
      * Obtener el atributo username
      */
-    public String getUsername() {
-
-        return this.username;
-
-    }
+    // getUsername()
 
     /*
      * Obtener el atributo password
      */
-    public String getPassword() {
-
-        return this.password;
-
-    }
+    // getPassword()
 
 }

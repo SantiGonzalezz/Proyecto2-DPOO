@@ -1,0 +1,16 @@
+nombre, posicion, precio
+Alisson, portero, 100
+Adrian, portero, 110
+Virgil, defensa, 90
+Gomez, defensa, 100
+Matip, defensa, 100
+Arnold, defensa, 100
+Robertson, defensa, 100
+Fabinho, mediocampista, 100
+Keita, mediocampista, 100
+Arthur, mediocampista, 100
+Thiago, mediocampista, 100
+Milner, mediocampista, 100
+Diaz, delantero, 100
+Jota, delantero, 100
+Salah, delantero, 100

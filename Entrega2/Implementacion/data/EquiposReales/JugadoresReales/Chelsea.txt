@@ -1,0 +1,16 @@
+nombre, posicion, precio
+Mendy, portero, 110
+Kepa, portero, 100
+Fofana, defensa, 90
+Cucurella, defensa, 100
+Silva, defensa, 100
+James, defensa, 100
+Koulibaly, defensa, 100
+Jorginho, mediocampista, 100
+Kante, mediocampista, 100
+Kovacic, mediocampista, 100
+Mount, mediocampista, 100
+Havertz, mediocampista, 100
+Aubameyang, delantero, 100
+Pulisic, delantero, 100
+Sterling, delantero, 100

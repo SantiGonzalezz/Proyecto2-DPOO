@@ -1,0 +1,16 @@
+nombre, posicion, precio
+Meslier, portero, 100
+Klaesson, portero, 110
+Koch, defensa, 90
+Llorente, defensa, 100
+Firpo, defensa, 100
+Cooper, defensa, 100
+Klich, defensa, 100
+Greenwood, mediocampista, 100
+Aaronson, mediocampista, 100
+Forshaw, mediocampista, 100
+Harrison, mediocampista, 100
+Gnonto, mediocampista, 100
+Rodrigo, delantero, 100
+Sinisterra, delantero, 100
+Bamford, delantero, 100

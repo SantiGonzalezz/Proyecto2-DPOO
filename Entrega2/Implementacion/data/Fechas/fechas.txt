@@ -1,0 +1,7 @@
+fecha, local, visitante, dia, hora
+1, Chelsea, Liverpool, 05-07-2022, 1400
+1, Leeds, Arsenal, 06-07-2022, 1400
+2, Liverpool, Leeds, 12-07-2022, 1400
+2, Arsenal, Chelsea, 13-07-2022, 0900
+3, Arsenal, Liverpool, 12-07-2022, 1400
+3, Leeds, Chelsea, 13-07-2022, 0900

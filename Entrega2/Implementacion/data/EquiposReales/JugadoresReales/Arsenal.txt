@@ -1,0 +1,16 @@
+nombre, posicion, precio
+Ramsdale, portero, 100
+Turner, portero, 110
+Saliba, defensa, 100
+White, defensa, 90
+Holding, defensa, 100
+Tierney, defensa, 100
+Zinchenko, defensa, 100
+Partey, mediocampista, 100
+Xhaka, mediocampista, 100
+Lokonga, mediocampista, 100
+Saka, mediocampista, 100
+Odegaard, mediocampista, 100
+Jesus, delantero, 100
+Martinelli, delantero, 100
+Marquinhos, delantero, 100
