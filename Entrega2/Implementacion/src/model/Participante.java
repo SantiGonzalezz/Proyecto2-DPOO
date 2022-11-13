@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Participante extends Usuario {
 
     // -----------------------
@@ -8,6 +10,9 @@ public class Participante extends Usuario {
 
     // username: String
     // password: String
+    private EquipoFantasia equipoFantasiaActual;
+    private ArrayList<EquipoFantasia> equipoFantasiaHistorico;
+    private float presupuesto;
 
     // -----------------------
     // Constructor
@@ -16,6 +21,7 @@ public class Participante extends Usuario {
     public Participante(String username, String password) {
 
         super(username, password);
+        presupuesto = TemporadaReal.getPresupuestoBase();
 
     }
 
@@ -32,5 +38,21 @@ public class Participante extends Usuario {
      * Obtener el atributo password
      */
     // getPassword()
+
+    /*
+     * Crear un nuevo equipoFantasia
+     */
+    public void nuevoEquipoFantasia(String nombreEquipo) {
+
+        equipoFantasiaActual = new EquipoFantasia(username, nombreEquipo, presupuesto);
+
+    }
+
+    /*
+     * Comprar Jugador
+     */
+    public void comprarJugador(JugadorReal jugador) {
+
+    }
 
 }

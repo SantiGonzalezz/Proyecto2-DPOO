@@ -33,4 +33,13 @@ public class Administrador extends Usuario {
      */
     // getPassword()
 
+    /*
+     * 
+     */
+    public void setPresupuestoBase(float presupuestoBase) {
+
+        TemporadaReal.setPresupuestoBase(presupuestoBase);
+
+    }
+
 }
