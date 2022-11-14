@@ -345,7 +345,9 @@ public class TemporadaReal {
     }
 
     /*
-     * 
+     * Cargar las fechas del calendario
+     * Parametros: String del archivo de las fechas
+     * Retorno: boolean
      */
     public boolean cargarFechas(String archivoFechas) {
 

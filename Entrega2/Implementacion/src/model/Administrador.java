@@ -34,7 +34,7 @@ public class Administrador extends Usuario {
     // getPassword()
 
     /*
-     * 
+     * Configurar el presupuesto base para la creacion de la temporada
      */
     public void setPresupuestoBase(float presupuestoBase) {
 
