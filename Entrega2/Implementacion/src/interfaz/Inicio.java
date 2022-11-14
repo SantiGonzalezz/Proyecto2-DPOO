@@ -1,5 +1,8 @@
 package interfaz;
 
+import model.Participante;
+import model.TemporadaReal;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,6 +16,7 @@ import java.awt.event.ActionListener;
 
 public class Inicio extends JFrame implements ActionListener {
 
+    private static TemporadaReal mundo = new TemporadaReal();
     private JLabel labelLiga;
     private JLabel labelTipo;
     private JButton buttonAdministrador;
@@ -72,11 +76,38 @@ public class Inicio extends JFrame implements ActionListener {
 
         if (e.getSource() == buttonAdministrador) {
 
+            this.setVisible(false);
+            new IngresoAdministrador(this);
+
         } else if (e.getSource() == buttonParticipante) {
             this.setVisible(false);
             new IngresoParticipante(this);
 
         }
+    }
+
+    public boolean iniciarSesionParticipante(String username, String password) {
+
+        return (mundo.iniciarSesionParticipante(username, password));
+
+    }
+
+    public Participante getParticipante(String username) {
+
+        return mundo.getParticipante(username);
+
+    }
+
+    public boolean registrarParticipante(String username, String password) {
+
+        return mundo.registrarParticipante(username, password);
+
+    }
+
+    public boolean iniciarSesionAdministrador(String username, String password) {
+
+        return mundo.iniciarSesionAdministrador(username, password);
+
     }
 
 }

@@ -42,4 +42,11 @@ public class Administrador extends Usuario {
 
     }
 
+    /*
+     * Cargar un partido
+     */
+    public void cargarPartido(int fecha, EquipoReal local, EquipoReal visitante) {
+
+    }
+
 }

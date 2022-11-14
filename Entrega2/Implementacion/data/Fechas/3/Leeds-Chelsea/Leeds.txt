@@ -1,0 +1,16 @@
+NombreJugador, Posicion, MinutosJugados, MinutoIngreso, MinutoSustitucion, GolesAnotados, PenaltisAnotados, PenaltisErrados, Autogoles, Asistencias, TarjetasAmarillas, TarjetasRojas, GolesRecibidos, PenaltisDetenidos
+Meslier, portero,90,0,90,0,0,0,0,0,0,0,2,1
+Klaesson, portero,0,0,0,0,0,0,0,0,0,0,0,0
+Koch, defensa,90,0,90,0,0,0,0,0,0,1,2,0
+Llorente, defensa,90,0,90,0,0,0,0,0,1,0,2,0
+Firpo, defensa,90,0,90,0,0,0,0,0,0,0,2,0
+Cooper, defensa,90,0,90,0,0,0,0,0,0,0,2,0
+Klich, defensa,0,0,0,0,0,0,0,0,0,0,0,0
+Greenwood, mediocampista,90,0,90,1,0,0,0,0,0,0,2,0
+Aaronson, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0
+Forshaw, mediocampista,90,0,90,0,0,0,0,0,0,0,2,0
+Harrison, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0
+Gnonto, mediocampista,0,0,0,0,0,0,0,0,0,0,0,0
+Rodrigo, delantero,90,0,90,1,0,0,0,0,0,0,2,0
+Sinisterra, delantero,90,0,90,0,0,1,0,0,0,0,2,0
+Bamford, delantero,0,0,0,0,0,0,0,0,0,0,0,0

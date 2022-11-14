@@ -488,9 +488,19 @@ public class TemporadaReal {
         return archivoFechas;
     }
 
+    /*
+     * Devuelve un participante determinado
+     */
+    public Participante getParticipante(String username) {
+
+        return participantes.get(username);
+
+    }
+
     public static void main(String[] args) {
 
         new TemporadaReal();
+        fechas.get(1).getPartidos().get(0).registrarDesempenoLocal();
 
     }
 

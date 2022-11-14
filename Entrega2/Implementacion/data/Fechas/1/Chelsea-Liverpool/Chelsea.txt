@@ -1,0 +1,16 @@
+NombreJugador, Posicion, MinutosJugados, MinutoIngreso, MinutoSustitucion, GolesAnotados, PenaltisAnotados, PenaltisErrados, Autogoles, Asistencias, TarjetasAmarillas, TarjetasRojas, GolesRecibidos, PenaltisDetenidos
+Mendy, portero,90,0,90,0,0,0,0,0,0,0,2,1
+Kepa, portero,0,0,0,0,0,0,0,0,0,0,0,0
+Fofana, defensa,90,0,90,0,0,0,0,0,0,1,2,0
+Cucurella, defensa,90,0,90,0,0,0,0,0,1,0,2,0
+Silva, defensa,90,0,90,0,0,0,0,0,0,0,2,0
+James, defensa,90,0,90,0,0,0,0,0,0,0,2,0
+Koulibaly, defensa,0,0,0,0,0,0,0,0,0,0,0,0
+Jorginho, mediocampista,90,0,90,1,0,0,0,0,0,0,2,0
+Kante, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0
+Kovacic, mediocampista,90,0,90,0,0,0,0,0,0,0,2,0
+Mount, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0
+Havertz, mediocampista,0,0,0,0,0,0,0,0,0,0,0,0
+Aubameyang, delantero,90,0,90,1,0,0,0,0,0,0,2,0
+Pulisic, delantero,90,0,90,0,0,1,0,0,0,0,2,0
+Sterling, delantero,0,0,0,0,0,0,0,0,0,0,0,0

@@ -1,59 +1,36 @@
 package interfaz;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-
 import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
+import model.Participante;
+
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class IngresoParticipante extends JFrame implements ActionListener {
-
-    Inicio inicio;
-    JButton buttonVolver;
-    JLabel labelUsername;
-    JLabel labelPassword;
-    JTextField textUsername;
-    JTextField textPassword;
-    JButton buttonRegistrarse;
-    JButton buttonIniciarSesion;
+public class IngresoParticipante extends Ingreso {
 
     public IngresoParticipante(Inicio inicio) {
 
-        this.inicio = inicio;
+        super(inicio);
 
-        buttonVolver = new JButton("Volver");
-        buttonVolver.setBounds(10, 10, 100, 50);
-        buttonVolver.addActionListener(this);
+        labelTitulo.setText("Ingreso Participante");
 
-        labelUsername = new JLabel("Username");
-        labelUsername.setBounds(250, 100, 100, 50);
-        labelPassword = new JLabel("Password");
-        labelPassword.setBounds(250, 150, 100, 50);
+        buttonRegistrarse = new JButton("Registrarse");
+        buttonRegistrarse.setBounds(100, 450, 200, 50);
+        buttonRegistrarse.addActionListener(this);
+        buttonRegistrarse.setFocusable(false);
+        buttonRegistrarse.setBackground(new Color(229, 235, 178));
 
-        textUsername = new JTextField();
-        textUsername.setBounds(350, 100, 100, 50);
-
-        this.add(buttonVolver);
-        this.add(labelUsername);
-        this.add(labelPassword);
-        this.add(textUsername);
-
-        this.setSize(700, 700);
-        this.setLayout(null);
-        this.setResizable(false);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setTitle("Ingreso Participantes");
-        this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(new Color(255, 251, 193));
-        this.setVisible(true);
+        this.add(buttonRegistrarse);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        String username = textUsername.getText();
+        String password = textPassword.getText();
 
         if (e.getSource() == buttonVolver) {
 
@@ -61,7 +38,47 @@ public class IngresoParticipante extends JFrame implements ActionListener {
             // new Inicio();
             inicio.setVisible(true);
 
+        } else if (e.getSource() == buttonIniciarSesion) {
+
+            if (inicio.iniciarSesionParticipante(username, password)) {
+
+                Participante participante = inicio.getParticipante(username);
+                // System.out.println(participante.getUsername() + participante.getPassword());
+
+                JOptionPane.showMessageDialog(this, "Ingreso correcto", "Ingreso Válido",
+                        JOptionPane.INFORMATION_MESSAGE);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Username o Password incorrectas", "Ingreso Inválido",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+
+        } else if (e.getSource() == buttonRegistrarse) {
+
+            if ((!username.equals("")) || (!password.equals(""))) {
+
+                if (inicio.registrarParticipante(username, password)) {
+
+                    Participante participante = inicio.getParticipante(username);
+                    // System.out.println(participante.getUsername() + participante.getPassword());
+
+                    JOptionPane.showMessageDialog(this, "Registro correcto", "Registro Válido",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                } else {
+
+                    JOptionPane.showMessageDialog(this, "Username ya existente", "Registro Inválido",
+                            JOptionPane.ERROR_MESSAGE);
+                }
+
+            } else {
+
+                JOptionPane.showMessageDialog(this, "Ingrese username y password", "Registro Incorrecto",
+                        JOptionPane.ERROR_MESSAGE);
+
+            }
         }
+
     }
 
 }
