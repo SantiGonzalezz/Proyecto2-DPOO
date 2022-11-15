@@ -1,5 +1,6 @@
 package interfaz;
 
+import model.FechaReal;
 import model.Participante;
 import model.TemporadaReal;
 
@@ -13,6 +14,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 public class Inicio extends JFrame implements ActionListener {
 
@@ -108,6 +110,16 @@ public class Inicio extends JFrame implements ActionListener {
 
         return mundo.iniciarSesionAdministrador(username, password);
 
+    }
+
+    public HashMap<Integer, FechaReal> getFechas() {
+        return TemporadaReal.getFechas();
+    }
+
+    public int cargarPartido(int fecha, int indicePartido) {
+        mundo.cargarPartido(fecha, indicePartido);
+
+        return mundo.jugadoresCargadosPartido(fecha, indicePartido);
     }
 
 }

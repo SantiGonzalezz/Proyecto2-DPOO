@@ -31,6 +31,8 @@ public class IngresoAdministrador extends Ingreso {
 
                 JOptionPane.showMessageDialog(this, "Ingreso correcto", "Ingreso Válido",
                         JOptionPane.INFORMATION_MESSAGE);
+                this.setVisible(false);
+                new PantallaAdmin(inicio);
 
             } else {
 

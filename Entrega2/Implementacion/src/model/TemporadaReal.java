@@ -31,6 +31,8 @@ public class TemporadaReal {
     private static String archivoEquipos;
     private static String archivoFechas;
 
+    private static int fechaActual;
+
     // -----------------------
     // Constructor
     // -----------------------
@@ -47,18 +49,107 @@ public class TemporadaReal {
         jugadores = new HashMap<String, JugadorReal>();
         fechas = new HashMap<Integer, FechaReal>();
 
+        fechaActual = 3;
+
+        // Cargar el administrador
         boolean cargadoAdministrador = cargarAdministrador(archivoAdministradores);
-        boolean cargadoParticipantes = cargarParticipantes(archivoParticipantes);
+
+        // Cargar los equipos reales que están en la liga
         boolean cargardoEquipos = cargarEquipos(archivoEquipos);
+
+        // Cargar las fechas y partidos de equipos reales
         boolean cargadoFechas = cargarFechas(archivoFechas);
 
-        System.out.println();
+        // Cargar los participantes
+        boolean cargadoParticipantes = cargarParticipantes(archivoParticipantes);
+
+        // Cargar el desempeno de los jugadores en fechas anteriores
+        boolean cargadoDesempenoFechas = cargarDesempenoFechas();
+
+        // System.out.println(fechas.get(1).getPartidos().get(0).getLocal().getNombre());
+        // System.out.println(fechas.get(1).getPartidos().get(0).getVisitante().getNombre());
+        // System.out.println(fechas.get(1).getPartidos().get(1).getLocal().getNombre());
+        // System.out.println(fechas.get(1).getPartidos().get(1).getVisitante().getNombre());
+        // System.out.println(fechas.get(1).getPartidos().get(0).cargarPartido());
+        // System.out.println(fechas.get(1).getPartidos().get(1).cargarPartido());
+        // System.out.println(fechas.get(1).getDesempenoFechas().size());
+        // System.out.println(fechas.get(1).getDesempenoFechas().size());
+        // System.out.println(fechas.get(2).getDesempenoFechas().size());
+        // System.out.println(fechas.get(3).getDesempenoFechas().size());
+
+        // System.out.println(cargarDesempenoFechaActual());
+        // System.out.println(fechas.get(3).getDesempenoFechas().size());
 
     }
 
     // -----------------------
     // Metodos
     // -----------------------
+
+    /*
+     * 
+     */
+    public int jugadoresCargadosPartido(int fecha, int indice) {
+
+        return fechas.get(fecha).getPartidos().get(indice).getDesempenoLocal().size() +
+                fechas.get(fecha).getPartidos().get(indice).getDesempenoVisitante().size();
+    }
+
+    /*
+     * Cargar un partido especifico
+     */
+    public boolean cargarPartido(int fecha, int indice) {
+
+        fechas.get(fecha).getPartidos().get(indice).cargarPartido();
+
+        return true;
+    }
+
+    /*
+     * Cargar la fecha actual
+     */
+    public boolean cargarDesempenoFechaActual() {
+
+        FechaReal fecha = fechas.get(fechaActual);
+
+        ArrayList<PartidoReal> partidosFecha = fecha.getPartidos();
+
+        for (int j = 0; j < partidosFecha.size(); j++) {
+
+            PartidoReal partido = partidosFecha.get(j);
+
+            partido.cargarPartido();
+        }
+
+        fechaActual += 1;
+
+        return true;
+
+    }
+
+    /*
+     * Cargar Desempeno Fechas
+     */
+    public boolean cargarDesempenoFechas() {
+
+        for (int i = 1; i < fechaActual; i++) {
+
+            FechaReal fecha = fechas.get(i);
+
+            ArrayList<PartidoReal> partidosFecha = fecha.getPartidos();
+
+            for (int j = 0; j < partidosFecha.size(); j++) {
+
+                PartidoReal partido = partidosFecha.get(j);
+
+                partido.cargarPartido();
+
+            }
+
+        }
+
+        return true;
+    }
 
     /*
      * Iniciar Sesion Administrador

@@ -1,16 +1,16 @@
-NombreJugador, Posicion, MinutosJugados, MinutoIngreso, MinutoSustitucion, GolesAnotados, PenaltisAnotados, PenaltisErrados, Autogoles, Asistencias, TarjetasAmarillas, TarjetasRojas, GolesRecibidos, PenaltisDetenidos
-Ramsdale, portero,90,0,90,0,0,0,0,0,0,0,2,1
-Turner, portero,0,0,0,0,0,0,0,0,0,0,0,0
-Saliba, defensa,90,0,90,0,0,0,0,0,0,1,2,0
-White, defensa,90,0,90,0,0,0,0,0,1,0,2,0
-Holding, defensa,90,0,90,0,0,0,0,0,0,0,2,0
-Tierney, defensa,90,0,90,0,0,0,0,0,0,0,2,0
-Zinchenko, defensa,0,0,0,0,0,0,0,0,0,0,0,0
-Partey, mediocampista,90,0,90,1,0,0,0,0,0,0,2,0
-Xhaka, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0
-Lokonga, mediocampista,90,0,90,0,0,0,0,0,0,0,2,0
-Saka, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0
-Odegaard, mediocampista,0,0,0,0,0,0,0,0,0,0,0,0
-Jesus, delantero,90,0,90,1,0,0,0,0,0,0,2,0
-Martinelli, delantero,90,0,90,0,0,1,0,0,0,0,2,0
-Marquinhos, delantero,0,0,0,0,0,0,0,0,0,0,0,0
+NombreJugador, Posicion, MinutosJugados, MinutoIngreso, MinutoSustitucion, GolesAnotados, PenaltisAnotados, PenaltisErrados, Autogoles, Asistencias, TarjetasAmarillas, TarjetasRojas, GolesRecibidos, PenaltisDetenidos,Capitan
+Ramsdale, portero,90,0,90,0,0,0,0,0,0,0,2,1,0
+Turner, portero,0,0,0,0,0,0,0,0,0,0,0,0,0
+Saliba, defensa,90,0,90,0,0,0,0,0,0,1,2,0,0
+White, defensa,90,0,90,0,0,0,0,0,1,0,2,0,0
+Holding, defensa,90,0,90,0,0,0,0,0,0,0,2,0,0
+Tierney, defensa,90,0,90,0,0,0,0,0,0,0,2,0,1
+Zinchenko, defensa,0,0,0,0,0,0,0,0,0,0,0,0,0
+Partey, mediocampista,90,0,90,1,0,0,0,0,0,0,2,0,0
+Xhaka, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0,0
+Lokonga, mediocampista,90,0,90,0,0,0,0,0,0,0,2,0,0
+Saka, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0,0
+Odegaard, mediocampista,0,0,0,0,0,0,0,0,0,0,0,0,0
+Jesus, delantero,90,0,90,1,0,0,0,0,0,0,2,0,0
+Martinelli, delantero,90,0,90,0,0,1,0,0,0,0,2,0,0
+Marquinhos, delantero,0,0,0,0,0,0,0,0,0,0,0,0,0

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class FechaReal {
 
@@ -9,6 +10,7 @@ public class FechaReal {
     // -----------------------
     private int numeroFecha;
     private ArrayList<PartidoReal> partidos;
+    private HashMap<String, DesempenoJugadorReal> desempenoFechas;
 
     // -----------------------
     // Constructor
@@ -18,12 +20,20 @@ public class FechaReal {
 
         this.numeroFecha = numeroFecha;
         partidos = new ArrayList<PartidoReal>();
+        desempenoFechas = new HashMap<String, DesempenoJugadorReal>();
 
     }
 
     // -----------------------
     // Metodos
     // -----------------------
+
+    /*
+     * Agregar un desempeno de jugador en esa fecha
+     */
+    public void addDesempeno(String nombreJugador, DesempenoJugadorReal jugador) {
+        desempenoFechas.put(nombreJugador, jugador);
+    }
 
     /*
      * Agrega un partido a los partidos de la fecha
@@ -52,6 +62,10 @@ public class FechaReal {
 
         return partidos;
 
+    }
+
+    public HashMap<String, DesempenoJugadorReal> getDesempenoFechas() {
+        return desempenoFechas;
     }
 
 }

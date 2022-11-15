@@ -1,5 +1,8 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 
 public class PartidoReal {
@@ -44,26 +47,223 @@ public class PartidoReal {
     // -----------------------¨
 
     /*
+     * String local visitante
+     */
+    public String getStringPartido() {
+        return local.getNombre() + "-" + visitante.getNombre();
+    }
+
+    /*
+     * Cargar Partido
+     */
+    public boolean cargarPartido() {
+
+        registrarResultado();
+
+        registrarDesempenoLocal();
+        registrarDesempenoVisitante();
+
+        return true;
+    }
+
+    /*
      * Registrar desempeno Local
      */
-    public void registrarDesempenoLocal() {
+    public boolean registrarDesempenoLocal() {
 
         String archivoLocal = archivoDesempeno + local.getNombre() + ".txt";
-        System.out.println(archivoLocal);
+
+        try {
+
+            // Leer archivo
+            BufferedReader br;
+            br = new BufferedReader(new FileReader(archivoLocal));
+
+            // Leer primera fila que son los nombres de las columnas
+            String linea;
+            linea = br.readLine();
+            linea = br.readLine();
+
+            while (linea != null) {
+
+                // CSV
+                String[] partes = linea.split(",");
+
+                String nombreJugador = partes[0].trim();
+
+                JugadorReal jugador = TemporadaReal.getJugadores().get(nombreJugador);
+
+                // String posicion = partes[1].trim();
+
+                int minutosJugados = Integer.parseInt(partes[2].trim());
+                int minutoIngreso = Integer.parseInt(partes[3].trim());
+                int minutoSustitucion = Integer.parseInt(partes[4].trim());
+                int golesAnotados = Integer.parseInt(partes[5].trim());
+                int penaltisAnotados = Integer.parseInt(partes[6].trim());
+                int penaltisErrados = Integer.parseInt(partes[7].trim());
+                int autogoles = Integer.parseInt(partes[8].trim());
+                int asistencias = Integer.parseInt(partes[9].trim());
+                int tarjetasAmarillas = Integer.parseInt(partes[10].trim());
+                int tarjetasRojas = Integer.parseInt(partes[11].trim());
+                int golesRecibidos = Integer.parseInt(partes[12].trim());
+                int penaltisDetenidos = Integer.parseInt(partes[13].trim());
+                int capitan = Integer.parseInt(partes[14].trim());
+
+                // System.out.print(partes);
+                DesempenoJugadorReal desempenoJugador = new DesempenoJugadorReal(jugador, this, 1, minutosJugados,
+                        minutoIngreso,
+                        minutoSustitucion, golesAnotados, penaltisAnotados, penaltisErrados, autogoles, asistencias,
+                        tarjetasAmarillas, tarjetasRojas, golesRecibidos, penaltisDetenidos, capitan);
+
+                // Guardar en Hash por fechas el jugador
+                TemporadaReal.getFechas().get(fecha).addDesempeno(desempenoJugador.getNombre(), desempenoJugador);
+
+                desempenoLocal.put(desempenoJugador.getNombre(), desempenoJugador);
+
+                linea = br.readLine();
+
+            }
+
+            // Cerrar conexion
+            br.close();
+
+            return true;
+
+        } catch (IOException e) {
+
+            // e.printStackTrace();
+
+            return false;
+
+        }
+
+    }
+
+    /*
+     * Registrar desempeno Local
+     */
+    public boolean registrarDesempenoVisitante() {
+
+        String archivoLocal = archivoDesempeno + visitante.getNombre() + ".txt";
+
+        try {
+
+            // Leer archivo
+            BufferedReader br;
+            br = new BufferedReader(new FileReader(archivoLocal));
+
+            // Leer primera fila que son los nombres de las columnas
+            String linea;
+            linea = br.readLine();
+            linea = br.readLine();
+
+            while (linea != null) {
+
+                // CSV
+                String[] partes = linea.split(",");
+
+                String nombreJugador = partes[0].trim();
+
+                JugadorReal jugador = TemporadaReal.getJugadores().get(nombreJugador);
+
+                // String posicion = partes[1].trim();
+
+                int minutosJugados = Integer.parseInt(partes[2].trim());
+                int minutoIngreso = Integer.parseInt(partes[3].trim());
+                int minutoSustitucion = Integer.parseInt(partes[4].trim());
+                int golesAnotados = Integer.parseInt(partes[5].trim());
+                int penaltisAnotados = Integer.parseInt(partes[6].trim());
+                int penaltisErrados = Integer.parseInt(partes[7].trim());
+                int autogoles = Integer.parseInt(partes[8].trim());
+                int asistencias = Integer.parseInt(partes[9].trim());
+                int tarjetasAmarillas = Integer.parseInt(partes[10].trim());
+                int tarjetasRojas = Integer.parseInt(partes[11].trim());
+                int golesRecibidos = Integer.parseInt(partes[12].trim());
+                int penaltisDetenidos = Integer.parseInt(partes[13].trim());
+                int capitan = Integer.parseInt(partes[14].trim());
+
+                // System.out.print(partes);
+                DesempenoJugadorReal desempenoJugador = new DesempenoJugadorReal(jugador, this, 2, minutosJugados,
+                        minutoIngreso,
+                        minutoSustitucion, golesAnotados, penaltisAnotados, penaltisErrados, autogoles, asistencias,
+                        tarjetasAmarillas, tarjetasRojas, golesRecibidos, penaltisDetenidos, capitan);
+
+                // Guardar en Hash por fechas el jugador
+                TemporadaReal.getFechas().get(fecha).addDesempeno(desempenoJugador.getNombre(), desempenoJugador);
+
+                desempenoVisitante.put(desempenoJugador.getNombre(), desempenoJugador);
+
+                linea = br.readLine();
+
+            }
+
+            // Cerrar conexion
+            br.close();
+
+            return true;
+
+        } catch (IOException e) {
+
+            // e.printStackTrace();
+
+            return false;
+
+        }
 
     }
 
     /*
      * Registrar resultado
      */
-    public void registrarResultado(int resultado) {
+    public boolean registrarResultado() {
 
-        if (resultado == 1) {
-            ganaLocal();
-        } else if (resultado == 0) {
-            empate();
-        } else if (resultado == 2) {
-            ganaVisitante();
+        String archivoResultado = archivoDesempeno + "Resultado.txt";
+
+        try {
+
+            // Leer archivo
+            BufferedReader br;
+            br = new BufferedReader(new FileReader(archivoResultado));
+
+            // Leer primera fila que son los nombres de las columnas
+            String linea;
+            linea = br.readLine();
+            linea = br.readLine();
+
+            while (linea != null) {
+
+                // CSV
+                String resultado = linea.trim();
+
+                if (resultado.equals("Local")) {
+
+                    ganaLocal();
+
+                } else if (resultado.equals("Empate")) {
+
+                    ganaVisitante();
+
+                } else if (resultado.equals("Empate")) {
+
+                    empate();
+
+                }
+
+                linea = br.readLine();
+
+            }
+
+            // Cerrar conexion
+            br.close();
+
+            return true;
+
+        } catch (IOException e) {
+
+            // e.printStackTrace();
+
+            return false;
+
         }
 
     }
@@ -132,6 +332,22 @@ public class PartidoReal {
 
         return hora;
 
+    }
+
+    public int getResultado() {
+        return resultado;
+    }
+
+    public HashMap<String, DesempenoJugadorReal> getDesempenoLocal() {
+        return desempenoLocal;
+    }
+
+    public HashMap<String, DesempenoJugadorReal> getDesempenoVisitante() {
+        return desempenoVisitante;
+    }
+
+    public String getArchivoDesempeno() {
+        return archivoDesempeno;
     }
 
 }

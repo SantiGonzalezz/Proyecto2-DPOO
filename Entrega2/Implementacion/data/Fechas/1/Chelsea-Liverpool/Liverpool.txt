@@ -1,16 +1,16 @@
-NombreJugador, Posicion, MinutosJugados, MinutoIngreso, MinutoSustitucion, GolesAnotados, PenaltisAnotados, PenaltisErrados, Autogoles, Asistencias, TarjetasAmarillas, TarjetasRojas, GolesRecibidos, PenaltisDetenidos
-Alisson, portero,90,0,90,0,0,0,0,0,0,0,2,1
-Adrian, portero,0,0,0,0,0,0,0,0,0,0,0,0
-Virgil, defensa,90,0,90,0,0,0,0,0,0,1,2,0
-Gomez, defensa,90,0,90,0,0,0,0,0,1,0,2,0
-Matip, defensa,90,0,90,0,0,0,0,0,0,0,2,0
-Arnold, defensa,90,0,90,0,0,0,0,0,0,0,2,0
-Robertson, defensa,0,0,0,0,0,0,0,0,0,0,0,0
-Fabinho, mediocampista,90,0,90,1,0,0,0,0,0,0,2,0
-Keita, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0
-Arthur, mediocampista,90,0,90,0,0,0,0,0,0,0,2,0
-Thiago, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0
-Milner, mediocampista,0,0,0,0,0,0,0,0,0,0,0,0
-Diaz, delantero,90,0,90,1,0,0,0,0,0,0,2,0
-Jota, delantero,90,0,90,0,0,1,0,0,0,0,2,0
-Salah, delantero,0,0,0,0,0,0,0,0,0,0,0,0
+NombreJugador, Posicion, MinutosJugados, MinutoIngreso, MinutoSustitucion, GolesAnotados, PenaltisAnotados, PenaltisErrados, Autogoles, Asistencias, TarjetasAmarillas, TarjetasRojas, GolesRecibidos, PenaltisDetenidos,Capitan
+Alisson, portero,90,0,90,0,0,0,0,0,0,0,2,1,0
+Adrian, portero,0,0,0,0,0,0,0,0,0,0,0,0,0
+Virgil, defensa,90,0,90,0,0,0,0,0,0,1,2,0,0
+Gomez, defensa,90,0,90,0,0,0,0,0,1,0,2,0,0
+Matip, defensa,90,0,90,0,0,0,0,0,0,0,2,0,0
+Arnold, defensa,90,0,90,0,0,0,0,0,0,0,2,0,1
+Robertson, defensa,0,0,0,0,0,0,0,0,0,0,0,0,0
+Fabinho, mediocampista,90,0,90,1,0,0,0,0,0,0,2,0,0
+Keita, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0,0
+Arthur, mediocampista,90,0,90,0,0,0,0,0,0,0,2,0,0
+Thiago, mediocampista,90,0,90,0,0,0,0,1,0,0,2,0,0
+Milner, mediocampista,0,0,0,0,0,0,0,0,0,0,0,0,0
+Diaz, delantero,90,0,90,1,0,0,0,0,0,0,2,0,0
+Jota, delantero,90,0,90,0,0,1,0,0,0,0,2,0,0
+Salah, delantero,0,0,0,0,0,0,0,0,0,0,0,0,0
