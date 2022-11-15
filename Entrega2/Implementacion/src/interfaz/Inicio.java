@@ -1,6 +1,7 @@
 package interfaz;
 
 import model.FechaReal;
+import model.JugadorReal;
 import model.Participante;
 import model.TemporadaReal;
 
@@ -120,6 +121,10 @@ public class Inicio extends JFrame implements ActionListener {
         mundo.cargarPartido(fecha, indicePartido);
 
         return mundo.jugadoresCargadosPartido(fecha, indicePartido);
+    }
+
+    public HashMap<String, JugadorReal> getJugadores() {
+        return TemporadaReal.getJugadores();
     }
 
 }

@@ -48,6 +48,9 @@ public class IngresoParticipante extends Ingreso {
                 JOptionPane.showMessageDialog(this, "Ingreso correcto", "Ingreso Válido",
                         JOptionPane.INFORMATION_MESSAGE);
 
+                this.setVisible(false);
+                new PantallaParticipante(inicio, participante);
+
             } else {
                 JOptionPane.showMessageDialog(this, "Username o Password incorrectas", "Ingreso Inválido",
                         JOptionPane.ERROR_MESSAGE);
@@ -55,7 +58,7 @@ public class IngresoParticipante extends Ingreso {
 
         } else if (e.getSource() == buttonRegistrarse) {
 
-            if ((!username.equals("")) || (!password.equals(""))) {
+            if ((!username.equals("")) && (!password.equals(""))) {
 
                 if (inicio.registrarParticipante(username, password)) {
 

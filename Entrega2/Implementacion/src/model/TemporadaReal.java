@@ -50,6 +50,7 @@ public class TemporadaReal {
         fechas = new HashMap<Integer, FechaReal>();
 
         fechaActual = 3;
+        presupuestoBase = 10000;
 
         // Cargar el administrador
         boolean cargadoAdministrador = cargarAdministrador(archivoAdministradores);
@@ -66,19 +67,26 @@ public class TemporadaReal {
         // Cargar el desempeno de los jugadores en fechas anteriores
         boolean cargadoDesempenoFechas = cargarDesempenoFechas();
 
-        // System.out.println(fechas.get(1).getPartidos().get(0).getLocal().getNombre());
-        // System.out.println(fechas.get(1).getPartidos().get(0).getVisitante().getNombre());
-        // System.out.println(fechas.get(1).getPartidos().get(1).getLocal().getNombre());
-        // System.out.println(fechas.get(1).getPartidos().get(1).getVisitante().getNombre());
-        // System.out.println(fechas.get(1).getPartidos().get(0).cargarPartido());
-        // System.out.println(fechas.get(1).getPartidos().get(1).cargarPartido());
-        // System.out.println(fechas.get(1).getDesempenoFechas().size());
-        // System.out.println(fechas.get(1).getDesempenoFechas().size());
-        // System.out.println(fechas.get(2).getDesempenoFechas().size());
-        // System.out.println(fechas.get(3).getDesempenoFechas().size());
-
-        // System.out.println(cargarDesempenoFechaActual());
-        // System.out.println(fechas.get(3).getDesempenoFechas().size());
+        participantes.get("santiago").nuevoEquipoFantasia("equipoPrueba");
+        System.out.println(participantes.get("santiago").getEquipoFantasiaActual().getNombre());
+        participantes.get("santiago").comprarJugador(jugadores.get("Sterling"));
+        participantes.get("santiago").comprarJugador(jugadores.get("Sinisterra"));
+        participantes.get("santiago").comprarJugador(jugadores.get("Sinisterra"));
+        participantes.get("santiago").comprarJugador(jugadores.get("Saliba"));
+        participantes.get("santiago").comprarJugador(jugadores.get("Saliba"));
+        // System.out.println(jugadores.get("Marquinhos").getPosicion());
+        System.out.println(
+                participantes.get("santiago").getEquipoFantasiaActual().getPorteros().size());
+        System.out.println(
+                participantes.get("santiago").getEquipoFantasiaActual().getDefensas().size());
+        System.out.println(
+                participantes.get("santiago").getEquipoFantasiaActual().getMediocampistas().size());
+        System.out.println(
+                participantes.get("santiago").getEquipoFantasiaActual().getDelanteros().size());
+        System.out.println(
+                participantes.get("santiago").getEquipoFantasiaActual().getJugadoresHash().size());
+        System.out.println(
+                participantes.get("santiago").getEquipoFantasiaActual().getJugadoresLista().size());
 
     }
 

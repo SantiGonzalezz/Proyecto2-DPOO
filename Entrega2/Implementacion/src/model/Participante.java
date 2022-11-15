@@ -23,6 +23,8 @@ public class Participante extends Usuario {
         super(username, password);
         presupuesto = TemporadaReal.getPresupuestoBase();
 
+        equipoFantasiaHistorico = new ArrayList<EquipoFantasia>();
+
     }
 
     // -----------------------
@@ -45,6 +47,7 @@ public class Participante extends Usuario {
     public void nuevoEquipoFantasia(String nombreEquipo) {
 
         equipoFantasiaActual = new EquipoFantasia(username, nombreEquipo, presupuesto);
+        equipoFantasiaHistorico.add(equipoFantasiaActual);
 
     }
 
@@ -53,6 +56,20 @@ public class Participante extends Usuario {
      */
     public void comprarJugador(JugadorReal jugador) {
 
+        equipoFantasiaActual.comprarJugador(jugador);
+
+    }
+
+    public EquipoFantasia getEquipoFantasiaActual() {
+        return equipoFantasiaActual;
+    }
+
+    public ArrayList<EquipoFantasia> getEquipoFantasiaHistorico() {
+        return equipoFantasiaHistorico;
+    }
+
+    public float getPresupuesto() {
+        return presupuesto;
     }
 
 }

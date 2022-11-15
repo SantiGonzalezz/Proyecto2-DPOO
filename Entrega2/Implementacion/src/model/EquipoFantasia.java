@@ -16,6 +16,11 @@ public class EquipoFantasia {
     private int numeroJugadores;
     private ArrayList<JugadorFantasia> jugadoresLista;
     private HashMap<String, JugadorFantasia> jugadoresHash;
+
+    private HashMap<String, JugadorFantasia> porteros;
+    private HashMap<String, JugadorFantasia> defensas;
+    private HashMap<String, JugadorFantasia> mediocampistas;
+    private HashMap<String, JugadorFantasia> delanteros;
     private Alineacion alineacion;
 
     // -----------------------
@@ -24,19 +29,25 @@ public class EquipoFantasia {
 
     public EquipoFantasia(String participante, String nombre, float presupuesto) {
 
+        this.participante = participante;
+        this.nombre = nombre;
+        this.presupuesto = presupuesto;
+
         numeroJugadores = 15;
 
-        numeroPosicion = new HashMap<>();
+        numeroPosicion = new HashMap<String, Integer>();
         numeroPosicion.put("portero", 2);
         numeroPosicion.put("defensa", 5);
         numeroPosicion.put("mediocampista", 5);
         numeroPosicion.put("delantero", 3);
 
-        this.participante = participante;
-        this.nombre = nombre;
-        this.presupuesto = presupuesto;
         jugadoresLista = new ArrayList<JugadorFantasia>();
         jugadoresHash = new HashMap<String, JugadorFantasia>();
+
+        porteros = new HashMap<String, JugadorFantasia>();
+        defensas = new HashMap<String, JugadorFantasia>();
+        mediocampistas = new HashMap<String, JugadorFantasia>();
+        delanteros = new HashMap<String, JugadorFantasia>();
 
     }
 
@@ -45,61 +56,176 @@ public class EquipoFantasia {
     // -----------------------
 
     /*
-     * Comprar jugador
+     * Comprar Jugador
      */
-    public boolean comprarJugador(JugadorFantasia jugador) {
+    public boolean comprarJugador(JugadorReal jugadorReal) {
 
-        // Revisar si hay cupos disponibles en la plantilla
-        if (checkCondicionesEquipo()) {
+        JugadorFantasia jugador = new JugadorFantasia(jugadorReal.getNombre(), jugadorReal.getPosicion(),
+                jugadorReal.getPrecio(), jugadorReal.getEquipo());
 
-            return false;
+        if (!jugadoresHash.containsKey(jugador.getNombre())) {
 
-        } else {
+            // Hay cupo disponible en la plantilla
+            // Osea es menor a 15
+            if (jugadoresLista.size() < numeroJugadores) {
 
-            // Revisar si hay cupos disponibles en la posicion
-            String posicion = jugador.getPosicion();
-            if (checkNumeroPosicion(posicion)) {
+                String posicion = jugador.getPosicion();
 
-                return false;
+                // Revisar si hay cupo en la posicion
+                if (posicion.equals("portero")) {
 
-            } else {
+                    if (porteros.size() < numeroPosicion.get("portero")) {
 
-                // Revisar si ya existe en la plantilla
-                if (jugadoresHash.containsKey(jugador.getNombre())) {
+                        // Anadir a la posicion y la lista general
+                        jugadoresLista.add(jugador);
+                        jugadoresHash.put(jugador.getNombre(), jugador);
+                        porteros.put(jugador.getNombre(), jugador);
 
-                    return false;
-
-                } else {
-
-                    // Revisar si alcanza el dinero
-                    if (jugador.getPrecio() > presupuesto) {
-
-                        return false;
+                        return true;
 
                     } else {
 
-                        // Actualizar presupuesto
-                        presupuesto -= jugador.getPrecio();
+                        return false;
+
+                    }
+
+                } else if (posicion.equals("defensa")) {
+
+                    if (defensas.size() < numeroPosicion.get("defensa")) {
+
+                        jugadoresLista.add(jugador);
+                        jugadoresHash.put(jugador.getNombre(), jugador);
+                        defensas.put(jugador.getNombre(), jugador);
+
+                        return true;
+
+                    } else {
+                        return false;
+                    }
+
+                } else if (posicion.equals("mediocampista")) {
+
+                    if (mediocampistas.size() < numeroPosicion.get("mediocampista")) {
 
                         jugadoresLista.add(jugador);
                         jugadoresHash.put(jugador.getNombre(), jugador);
 
+                        mediocampistas.put(jugador.getNombre(), jugador);
+
+                        return true;
+
+                    } else {
+                        return false;
                     }
+
+                } else if (posicion.equals("delantero")) {
+
+                    if (delanteros.size() < numeroPosicion.get("delantero")) {
+
+                        jugadoresLista.add(jugador);
+                        jugadoresHash.put(jugador.getNombre(), jugador);
+
+                        delanteros.put(jugador.getNombre(), jugador);
+
+                        return true;
+
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    /*
+     * Vender Jugador
+     */
+    public boolean venderJugador(JugadorReal jugadorReal) {
+
+        if (jugadoresHash.containsKey(jugadorReal.getNombre())) {
+
+            JugadorFantasia jugador = jugadoresHash.get(jugadorReal.getNombre());
+            String posicion = jugador.getPosicion();
+
+            if (posicion.equals("portero")) {
+
+                if (porteros.size() < numeroPosicion.get("portero")) {
+
+                    // Anadir a la posicion y la lista general
+                    jugadoresLista.add(jugador);
+                    jugadoresHash.put(jugador.getNombre(), jugador);
+                    porteros.put(jugador.getNombre(), jugador);
 
                     return true;
 
+                } else {
+
+                    return false;
+
                 }
 
+            } else if (posicion.equals("defensa")) {
+
+                if (defensas.size() < numeroPosicion.get("defensa")) {
+
+                    jugadoresLista.add(jugador);
+                    jugadoresHash.put(jugador.getNombre(), jugador);
+                    defensas.put(jugador.getNombre(), jugador);
+
+                    return true;
+
+                } else {
+                    return false;
+                }
+
+            } else if (posicion.equals("mediocampista")) {
+
+                if (mediocampistas.size() < numeroPosicion.get("mediocampista")) {
+
+                    jugadoresLista.add(jugador);
+                    jugadoresHash.put(jugador.getNombre(), jugador);
+
+                    mediocampistas.put(jugador.getNombre(), jugador);
+
+                    return true;
+
+                } else {
+                    return false;
+                }
+
+            } else if (posicion.equals("delantero")) {
+
+                if (delanteros.size() < numeroPosicion.get("delantero")) {
+
+                    jugadoresLista.add(jugador);
+                    jugadoresHash.put(jugador.getNombre(), jugador);
+
+                    delanteros.put(jugador.getNombre(), jugador);
+
+                    return true;
+
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
             }
 
+        } else {
+            return false;
         }
-
     }
 
     /*
      * Vender un jugador
      */
-    public boolean venderJugador(JugadorFantasia jugador) {
+    public boolean venderJugador1(JugadorReal jugador) {
 
         // Hay al menos un jugador
         if (jugadoresLista.size() == 0) {
@@ -179,7 +305,7 @@ public class EquipoFantasia {
         int numPosicionMust = numeroPosicion.get(posicion);
 
         int numPosicion = 0;
-        for (JugadorFantasia jugador : jugadoresLista) {
+        for (JugadorReal jugador : jugadoresLista) {
 
             if (jugador.getPosicion().equals(posicion)) {
 
@@ -249,6 +375,38 @@ public class EquipoFantasia {
      */
     public String getParticipante() {
         return participante;
+    }
+
+    public float getPresupuesto() {
+        return presupuesto;
+    }
+
+    public HashMap<String, Integer> getNumeroPosicion() {
+        return numeroPosicion;
+    }
+
+    public int getNumeroJugadores() {
+        return numeroJugadores;
+    }
+
+    public HashMap<String, JugadorFantasia> getPorteros() {
+        return porteros;
+    }
+
+    public HashMap<String, JugadorFantasia> getDefensas() {
+        return defensas;
+    }
+
+    public HashMap<String, JugadorFantasia> getMediocampistas() {
+        return mediocampistas;
+    }
+
+    public HashMap<String, JugadorFantasia> getDelanteros() {
+        return delanteros;
+    }
+
+    public Alineacion getAlineacion() {
+        return alineacion;
     }
 
 }

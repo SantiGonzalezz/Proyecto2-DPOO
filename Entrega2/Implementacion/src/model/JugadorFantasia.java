@@ -12,6 +12,7 @@ public class JugadorFantasia extends JugadorReal {
     // posicion: String
     // precio: float
     // equipo: String
+    int puntos;
 
     // -----------------------
     // Constructor
@@ -26,5 +27,13 @@ public class JugadorFantasia extends JugadorReal {
     // -----------------------
     // Metodos
     // -----------------------
+
+    public int getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos() {
+
+    }
 
 }
