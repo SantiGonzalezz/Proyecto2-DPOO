@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
@@ -31,17 +32,26 @@ public class ModificarEquipoFantasia extends JFrame implements ActionListener {
     JLabel labelTituloListLabelJugadores;
     JList<String> listJugadoresTotales;
     JScrollPane scroll;
+    JButton buttonMostrarInfoJugador;
 
     JLabel labelInformacionJugador;
+    JLabel labelNombreJugador;
+    JLabel labelPosicionJugador;
+    JLabel labelPrecioJugador;
     JTextField textNombreJugador;
     JTextField textPosicionJugador;
     JTextField textPrecioJugador;
+
+    JButton buttonComprarJugador;
 
     JLabel labelTituloListJugadoresEquipo;
     JList listJugadoresEquipo;
     JScrollPane scroll2;
 
     JLabel labelInformacionJugadorEquipo;
+    JLabel labelNombreJugadorEquipo;
+    JLabel labelPosicionJugadorEquipo;
+    JLabel labelPrecioJugadorEquipo;
     JTextField textNombreJugadorEquipo;
     JTextField textPosicionJugadorEquipo;
     JTextField textPrecioJugadorEquipo;
@@ -79,9 +89,33 @@ public class ModificarEquipoFantasia extends JFrame implements ActionListener {
         scroll = new JScrollPane(listJugadoresTotales);
         scroll.setBounds(50, 200, 200, 110);
 
+        buttonMostrarInfoJugador = new JButton("Mostrar Informacion Jugador");
+        buttonMostrarInfoJugador.setBounds(50, 350, 200, 20);
+        buttonMostrarInfoJugador.addActionListener(this);
+
         // Informacion Jugador
         labelInformacionJugador = new JLabel("Información Jugador");
-        labelInformacionJugador.setBounds(400, 170, 100, 20);
+        labelInformacionJugador.setBounds(400, 170, 200, 20);
+
+        labelNombreJugador = new JLabel("Nombre");
+        labelNombreJugador.setBounds(300, 190, 100, 20);
+        textNombreJugador = new JTextField();
+        textNombreJugador.setBounds(400, 190, 200, 20);
+
+        labelPosicionJugador = new JLabel("Posicion");
+        labelPosicionJugador.setBounds(300, 210, 100, 20);
+        textPosicionJugador = new JTextField();
+        textPosicionJugador.setBounds(400, 210, 200, 20);
+
+        labelPrecioJugador = new JLabel("Precio");
+        labelPrecioJugador.setBounds(300, 230, 100, 20);
+        textPrecioJugador = new JTextField();
+        textPrecioJugador.setBounds(400, 230, 200, 20);
+
+        // button Comprar
+        buttonComprarJugador = new JButton("Comprar Jugador");
+        buttonComprarJugador.setBounds(350, 350, 200, 20);
+        buttonComprarJugador.addActionListener(this);
 
         // Lista Jugadores del Equipo
 
@@ -98,8 +132,23 @@ public class ModificarEquipoFantasia extends JFrame implements ActionListener {
         this.add(labelModificarEquipo);
         this.add(labelTituloListLabelJugadores);
         this.add(scroll);
+
+        this.add(buttonMostrarInfoJugador);
+        this.add(labelInformacionJugador);
+
+        this.add(labelNombreJugador);
+        this.add(textNombreJugador);
+
+        this.add(labelPosicionJugador);
+        this.add(textPosicionJugador);
+
+        this.add(labelPrecioJugador);
+        this.add(textPrecioJugador);
+
         this.add(labelTituloListJugadoresEquipo);
         this.add(scroll2);
+
+        this.add(buttonComprarJugador);
 
         // Propiedades Frame
         this.setSize(700, 700);
@@ -121,6 +170,20 @@ public class ModificarEquipoFantasia extends JFrame implements ActionListener {
             this.setVisible(false);
             inicio.setVisible(true);
 
+        } else if (e.getSource() == buttonMostrarInfoJugador) {
+            if (!listJugadoresTotales.isSelectionEmpty()) {
+
+                String nombreJugador = listJugadoresTotales.getSelectedValue();
+                JugadorReal jugador = inicio.getJugadores().get(nombreJugador);
+
+                textNombreJugador.setText(jugador.getNombre());
+                textPosicionJugador.setText(jugador.getPosicion());
+                textPrecioJugador.setText(String.valueOf(jugador.getPrecio()));
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Seleccione un jugador", "Error Carga",
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
 
     }
