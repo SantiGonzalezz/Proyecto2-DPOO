@@ -21,7 +21,7 @@ public class EquipoReal {
 
     public EquipoReal(String nombre) {
 
-        direccionArchivo = "./Entrega2/Implementacion/data/EquiposReales/JugadoresReales/";
+        direccionArchivo = "./data/EquiposReales/JugadoresReales/";
 
         this.nombre = nombre;
         jugadores = new ArrayList<JugadorReal>();
