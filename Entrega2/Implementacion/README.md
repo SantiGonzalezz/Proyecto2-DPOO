@@ -5,7 +5,8 @@
 ![a](https://i.ibb.co/sgRqHRh/image.png)
 
 1.  **Selecciona Administrador**
-    ![a](https://i.ibb.co/28RZqP5/image.png)
+
+![a](https://i.ibb.co/28RZqP5/image.png)
 
 Será redirigido a otra ventana donde podrá iniciar sesion.
 Aquí se supone que es una temporada en curso. En la cual ya se tiene un administrador, por lo que no tiene sentido registrar uno nuevo sino que solo debe iniciar sesión.
