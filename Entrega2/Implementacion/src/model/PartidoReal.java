@@ -37,7 +37,7 @@ public class PartidoReal {
         this.desempenoLocal = new HashMap<>();
         this.desempenoVisitante = new HashMap<>();
 
-        archivoDesempeno = "./Entrega2/Implementacion/data/Fechas/" + String.valueOf(fecha) + "/" + local.getNombre()
+        archivoDesempeno = "./data/Fechas/" + String.valueOf(fecha) + "/" + local.getNombre()
                 + "-" + visitante.getNombre() + "/";
 
     }
